@@ -16,44 +16,48 @@
   </head>
   <body>
     <nav class="navbar">
-        <h1 class="logo">College <span>Of Computing </h1>
-        <ul>
-            <li><a href="index.html">หน้าแรก</a></li>
-            <li><a href="sc9.html">อาคารวิทยวิภาส</a></li>
-            <li>
-                <a href="#">ห้องเลคเชอร์
-                  <span class="material-symbols-outlined">
-                    expand_more
-                    </span>
-            </a>
-                <nav class="lecture">
-                    <ul>
-                        <li><a href="lec9127.html">SC9127</a></li>
-                        <li><a href="lec9525.html">SC9525</a></li>
-                    </ul>
-
-                </nav>
-            </li>
-            <li>
-                <a href="#">ห้องแลป
-                  <span class="material-symbols-outlined">
-                    expand_more
-                    </span>
-            </a>
-                <nav class="lecture">
-                    <ul>
-                        <li><a href="sc9226.html">SC9226</a></li>
-                        <li><a href="lab9228.html">SC9228</a></li>
-                    </ul>
-
-                </nav>
-            </li>
-            <li><a href="intro.html">วิดีโอแนะนำ</a></li>
-        </ul>
+      <h1 class="logo">
+        <img src="./img/cp-cs2.png" /><span>College of<br />Computing</span>
+      </h1>
+      <ul>
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="sc9.html">อาคารวิทยวิภาส</a></li>
+        <li>
+          <a href="#"
+            >ห้องเลคเชอร์
+            <span class="material-symbols-outlined"> expand_more </span>
+          </a>
+          <nav class="lecture">
+            <ul>
+              <li><a href="lec9127.html">SC9127</a></li>
+              <li><a href="lec9525.html">SC9525</a></li>
+            </ul>
+          </nav>
+        </li>
+        <li>
+          <a href="#"
+            >ห้องแลป
+            <span class="material-symbols-outlined"> expand_more </span>
+          </a>
+          <nav class="lecture">
+            <ul>
+              <li><a href="sc9226.html">SC9226</a></li>
+              <li><a href="lab9228.html">SC9228</a></li>
+            </ul>
+          </nav>
+        </li>
+        <li><a href="intro.html">วิดีโอแนะนำ</a></li>
+      </ul>
     </nav>
     <a-scene>
       <!-- พื้นหลัง paro -->
-      <a-sky src="./img/sc9525_part1.jpg" rotation="0 -90 0" theta-start="40" theta-length="110" radius="40" ></a-sky>
+      <a-sky
+        src="./img/sc9525_part1.jpg"
+        rotation="0 -90 0"
+        theta-start="40"
+        theta-length="110"
+        radius="40"
+      ></a-sky>
       <!-- box position คือขนาดกล่อง, animation -->
       <a-box
         position="-1 0.5 -3"
@@ -63,17 +67,12 @@
         radius="0.1"
       >
         <!--add sound-->
-        <a-sound
-          src="sound/kku-mor.mp3"
-          autoplay="true"
-          loop="true"
-        ></a-sound>
+        <a-sound src="sound/kku-mor.mp3" autoplay="true" loop="true"></a-sound>
 
         <!--Text-->
         <a-text value="SC9525" position="1 1 -2.5" color="#f0f0f0"> </a-text>
       </a-box>
 
-      
       <a-box
         position="1 0.5 -3"
         rotation="0 -45 0"
@@ -88,9 +87,9 @@
           id="cursor"
           animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
           animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click"
-          animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing"></a-cursor>
+          animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing"
+        ></a-cursor>
       </a-camera>
-
     </a-scene>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
