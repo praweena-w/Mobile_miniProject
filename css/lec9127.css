@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Mitr:wght@400&family=Noto+Sans+Thai+Looped&display=swap");
+html {
+  font-size: calc(60% +0.8vmin);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mitr", sans-serif;
+}
+.img-box {
+  margin: 150px auto;
+}

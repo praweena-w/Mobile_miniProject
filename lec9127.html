@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/detail.css" />
+
+    <!--ทำ a frame -->
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+
+    <!-- google icon -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>Home Page</title>
+  </head>
+  <body>
+    <nav class="navbar">
+        <h1 class="logo">College <span>Of Computing </h1>
+        <ul>
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="sc9.html">อาคารวิทยวิภาส</a></li>
+            <li>
+                <a href="#">ห้องเลคเชอร์
+                  <span class="material-symbols-outlined">
+                    expand_more
+                    </span>
+            </a>
+                <nav class="lecture">
+                    <ul>
+                        <li><a href="lec9127.html">SC9127</a></li>
+                        <li><a href="lec9525.html">SC9525</a></li>
+                    </ul>
+
+                </nav>
+            </li>
+            <li>
+                <a href="#">ห้องแลป
+                  <span class="material-symbols-outlined">
+                    expand_more
+                    </span>
+            </a>
+                <nav class="lecture">
+                    <ul>
+                        <li><a href="sc9226.html">SC9226</a></li>
+                        <li><a href="lab9228.html">SC9228</a></li>
+                    </ul>
+
+                </nav>
+            </li>
+            <li><a href="intro.html">วิดีโอแนะนำ</a></li>
+        </ul>
+    </nav>
+    <div>
+      <a-scene>
+
+        <!-- width 10173
+        height 3772
+        (1/10173)(3772) => 0.370
+      -->
+      <a-ssets>
+        <img src="img/sc9127_p6.JPG" id="Sc9127">
+      </a-ssets>
+      <a-box
+      position="-1 0.5 -3"
+      rotation="0 45 0"
+      src="img/sc9525v2.png"
+      animation="property: rotation; to: 0 405 0; loop: true; dur: 5000"
+      radius="0.1"
+    >
+    <a-text value="SC9127" position="0 -5 -2.2" animation="property: position; to: 0 1.5 -2.2; dur: 2000; easing: linear; loop: false"></a-text>
+      <!--add sound-->
+      <a-sound
+        src="sound/kku-mor.mp3"
+        autoplay="true"
+        loop="true"
+      >
+    </a-sound>
+    </a-box>
+
+    
+    <a-box
+      position="1 0.5 -3"
+      rotation="0 -45 0"
+      src="img/sc9525.png"
+      animation="property: rotation; to: 0 -315 0; loop: true; dur: 5000"
+      radius="2.5"
+    >
+    </a-box>
+    
+      <a-sky src="#Sc9127" rotation="0 180 0" ></a-sky>
+    
+          
+      <a-camera>
+        <a-cursor
+          id="cursor"
+          animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
+          animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click"
+          animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing"></a-cursor>
+      </a-camera>
+    
+    
+    
+    
+      </a-scene>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      AFRAME.registerComponent('auto-scale-panorama', {
+        init: function () {
+            // Adjust the scale of the image to match its natural size
+            var el = this.el;
+            var panorama = document.querySelector('#Sc9127');
+            
+            // Get the natural width and height of the image
+            var naturalWidth = panorama.naturalWidth || panorama.width;
+            var naturalHeight = panorama.naturalHeight || panorama.height;
+
+            // Calculate the aspect ratio
+            var aspectRatio = naturalWidth / naturalHeight;
+
+            // Set the scale to match the aspect ratio
+            el.setAttribute('scale', { x: aspectRatio, y: 1, z: 1 });
+        }
+    });
+  </script>
+  </body>
+</html>

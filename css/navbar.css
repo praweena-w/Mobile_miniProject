@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Mitr:wght@400&family=Noto+Sans+Thai+Looped&display=swap");
+html {
+  font-size: calc(60% +0.8vmin);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mitr", sans-serif;
+}
+.navbar {
+  z-index: 100; /*-ทำให้พวกกล่องลอยได้่ -*/
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  padding: 0 5%;
+  background-color: #145da0;
+}
+.logo {
+  color: white; /*logo*/
+  font-size: 24px;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo img {
+  width: 48px;
+  height: 48px;
+  filter: invert(100%);
+}
+.logo span {
+  color: aliceblue;
+  line-height: 24px;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+.navbar ul li {
+  padding: 10px 30px;
+  position: relative;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.3s; /* รอ 3 วิ*/
+}
+/* กดที่เมนูแล้วสีเปลี่ยน */
+.navbar ul li a:hover {
+  color: #ddd;
+}
+.lecture {
+  display: none;
+}
+.navbar ul li:hover .lecture {
+  color: white;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #145da0;
+}
+.navbar ul li:hover .lecture ul {
+  display: block;
+  margin: 10px;
+}
+.navbar ul li:hover .lecture ul li {
+  width: 120px;
+  padding: 5px;
+}
+.material-symbols-outlined {
+  float: right;
+  margin-left: 10px;
+  padding-top: 1px; /* ให้ตรงกับข้อความ*/
+}
+
+@media screen and (max-width: 1200px) {
+  .menu {
+    display: block;
+  }
+
+  .menu span {
+    color: #fff;
+    font-size: 2.3rem;
+  }
+
+  nav .nav-link {
+    display: block;
+    background-color: #4a55a2;
+    border-left: 1px solid #1f1f1f;
+    box-shadow: 0px -5px 10px #2b2b2b;
+    position: fixed;
+    width: 25%;
+    height: 100%;
+    top: 0;
+    right: -65%;
+    padding: 1rem 0.5rem;
+    transition: 0.5s;
+  }
+
+  #nav-cb:checked ~ .menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+  }
+
+  #nav-cb:checked ~ nav .nav-link {
+    right: 0;
+    transition: 0.3s;
+  }
+
+  nav .nav-link ul li {
+    display: list-item;
+    padding: 0.9rem 0.7rem;
+  }
+
+  .close-btn span {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .close-btn {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #fff;
+  }
+}
